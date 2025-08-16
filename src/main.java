@@ -1,4 +1,4 @@
-import ...
+import...
 public class User {
     private String username;
     private String id;
@@ -34,6 +34,7 @@ public class User {
         this.role = role;
     }
 }
+
 public class Student {
     private String id;
     private String name;
@@ -49,7 +50,9 @@ public class Student {
     private String roomNumber;
     private String department;
 
-    public Student(String id, String name, String contact, String fatherName, String motherName, String parmanentAddress, String religion, String bloodGroup, int distance, int merit, int fatherMonthlyIncome, String roomNumber, String department) {
+    public Student(String id, String name, String contact, String fatherName, String motherName,
+            String parmanentAddress, String religion, String bloodGroup, int distance, int merit,
+            int fatherMonthlyIncome, String roomNumber, String department) {
         this.id = id;
         this.name = name;
         this.contact = contact;
@@ -104,7 +107,6 @@ public class Student {
     public void setBloodGroup(String bloodGroup) {
         this.bloodGroup = bloodGroup;
     }
-
 
     public String getId() {
         return id;
@@ -171,7 +173,7 @@ public class Student {
     }
 }
 
-class Appointment implements Serializable{
+class Appointment implements Serializable {
     private String appointmentId;
     private String StudentId;
     private String authority;
@@ -179,70 +181,80 @@ class Appointment implements Serializable{
     private String time;
     private boolean isApproved;
 
-    public Appointment(String appointmentId,String studentId){
-        this.appointmentId=appointmentId;
-        this.studnetId=studentId;
-        this.authority=authority;
-        this.data=data;
-        this.time=time;
-        this.isApproved=false;
+    public Appointment(String appointmentId, String studentId) {
+        this.appointmentId = appointmentId;
+        this.studentId = studentId;
+        this.authority = authority;
+        this.data = data;
+        this.time = time;
+        this.isApproved = false;
     }
-    public String getAppointmentId(){
+
+    public String getAppointmentId() {
         return appointmentId;
     }
-    public String getStudentId(){
+
+    public String getStudentId() {
         return studentId;
     }
-    public String getAuthority(){
+
+    public String getAuthority() {
         return authority;
     }
-    public String getDate(){
+
+    public String getDate() {
         return date;
     }
-    public String getTime(){
+
+    public String getTime() {
         return time;
     }
-    public boolean isApproved(){
+
+    public boolean isApproved() {
         return isApproved;
     }
-    public void setApproved(boolean approved){
-        this.isApproved=approved;
-    }
-}
 
+    public void setApproved(boolean approved) {
+        this.isApproved = approved;
+    }}
 
 Class Room implements Serializable{
     private String roomNumber;
     private int capacity;
-    private List<String>occupants;
+    private List<String> occupants;
 
-    public Room(String roomnumber,int capacity){
+    public Room(String roomNumber,int capacity){
         this.roomNUmber=roomNumber;
         this.capacity=capacity;
         this.occupants= new Arraylist<>();
 
     }
-    public string getRoomNUmber(){
+
+    public string getRoomNUmber() {
         return roomNumber;
     }
-    public int getCapacity(){
+
+    public int getCapacity() {
         return capacity;
     }
-    public List<STring>getOccupants(){
+
+    public List<String> getOccupants() {
         return occupants;
     }
-    public boolean isAvailable(){
-        return occupants.size()<capacity;
+
+    public boolean isAvailable() {
+        return occupants.size() < capacity;
     }
-    public void addOcccupant(String studentId){
-        if(isAvailable()){
+
+    public void addOcccupant(String studentId) {
+        if (isAvailable()) {
             occupants.add(studentId);
-        }
-        else{
+        } else {
             throw new illegalStateException("Room is full");
         }
     }
-    public void removeOccupant(String studentId){
+
+    public void removeOccupant(String studentId) {
         occupants.remove(StudentId);
     }
 }
